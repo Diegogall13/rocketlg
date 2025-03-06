@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket League - Jugabilidad</title>
+    <link rel="stylesheet" href="jugabilidad.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="img\img1.jpg" alt="Rocket League Logo">
+                <span class="logo-text">Rocket League</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="rocket.html">Inicio</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="jugabilidad.html">Jugabilidad</a></li>
+                <li><a href="competitivo.html">Competitivo</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+            </ul>
+        </nav>
+    </header>    
+    
+    <main class="content">
+        <h1>¿Quieres saber como se juega?</h1>
+        <div class="video-container">
+            <video width="450px" controls>
+                <source src="video.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+        <br> <br>
+
+        <button id="toggleInfo" class="toggle-button">Ver más</button>
+        
+        <section id="extraInfo" class="hidden">
+            <h1>Jugabilidad en Rocket League</h1>
+            <p>Rocket League ofrece una experiencia única que combina la velocidad de los autos con la estrategia del fútbol. Cada partido es un desafío en el que los jugadores deben dominar mecánicas como el control aéreo, los turboimpulsos y las colisiones estratégicas.</p>
+            <h2>Mecánicas del Juego</h2>
+            <p>El juego se centra en la precisión y la coordinación en equipo. Existen diversas mecánicas avanzadas, como el <em>dribbling</em>, los <em>flip resets</em> y los <em>air dribbles</em>, que permiten a los jugadores mejorar su rendimiento en la cancha.</p>
+            <h2>Modos de Juego</h2>
+            <p>Rocket League cuenta con modos casuales y competitivos, donde los jugadores pueden probar sus habilidades contra oponentes de todo el mundo. Algunos modos incluyen el estándar 3v3, 2v2, 1v1 y especiales como Rumble y Hoops.</p>
+            <h2>Personalización</h2>
+            <p>Los jugadores pueden personalizar sus vehículos con una amplia variedad de calcomanías, ruedas, explosiones de gol y más, lo que añade un elemento de expresión personal al juego.</p>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById("toggleInfo").addEventListener("click", function() {
+            const infoSection = document.getElementById("extraInfo");
+            if (infoSection.classList.contains("hidden")) {
+                infoSection.classList.remove("hidden");
+                this.textContent = "Ver menos";
+            } else {
+                infoSection.classList.add("hidden");
+                this.textContent = "Ver más";
+            }
+        });
+    </script>
+
+     <!-- Botón flotante para abrir el modal -->
+     <div class="contact-button" onclick="openModal()">
+        <a href="#">💬 Habla con Nosotros</a>
+    </div>
+
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Contáctanos</h2>
+        <form id="contactForm">
+            <label for="name">Nombre Completo:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="age">Edad:</label>
+            <input type="number" id="age" name="age" min="1" max="100" required>
+
+            <label for="birthdate">Fecha de Nacimiento:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+
+            <label for="favoriteColor">Color Favorito:</label>
+            <input type="color" id="favoriteColor" name="favoriteColor">
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+<footer>
+    <p style="text-align: center;">&copy; 2025 Rocket League Fans</p>
+</footer>
+
+<!-- Script para el funcionamiento del modal -->
+<script>
+    function openModal() {
+        document.getElementById("contactModal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("contactModal").style.display = "none";
+    }
+
+    // Cerrar el modal si se hace clic fuera de él
+    window.onclick = function(event) {
+        let modal = document.getElementById("contactModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

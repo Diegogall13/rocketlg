@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket League - Gamer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="img1.jpg" alt="Rocket League Logo">
+                <span class="logo-text">Rocket League</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="rocket.html">Inicio</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="jugabilidad.html">Jugabilidad</a></li>
+                <li><a href="competitivo.html">Competitivo</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+            </ul>
+        </nav>
+    </header>    
+    <main>
+        <h1>Introducción a Rocket League</h1>
+        <p><strong>Rocket League</strong> es un videojuego que combina fútbol con autos impulsados por cohetes. Fue desarrollado por <em>Psyonix</em> y lanzado en 2015. Se juega en equipos de 1 a 4 jugadores, con el objetivo de golpear un balón gigante hacia la portería rival usando vehículos personalizables.</p>
+        <p>El juego se destaca por su jugabilidad rápida, mecánicas acrobáticas y un fuerte componente competitivo, con modos casuales, clasificados y torneos. También tiene una escena de esports muy activa con la <em>Rocket League Championship Series (RLCS)</em>.</p>
+        <p>Desde 2020, <strong>Rocket League</strong> es <em>free-to-play</em> y está disponible en varias plataformas como PC, PlayStation, Xbox y Nintendo Switch.</p>
+
+        <div class="image-container">
+            <img src="img2.jpg" alt="Imagen Rocket League 2" width="450px">
+        </div>
+    </main>
+
+    <!-- Botón flotante para abrir el modal -->
+    <div class="contact-button" onclick="openModal()">
+        <a href="#">💬 Habla con Nosotros</a>
+    </div>
+
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Contáctanos</h2>
+        <form id="contactForm">
+            <label for="name">Nombre Completo:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="age">Edad:</label>
+            <input type="number" id="age" name="age" min="1" max="100" required>
+
+            <label for="birthdate">Fecha de Nacimiento:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+
+            <label for="favoriteColor">Color Favorito:</label>
+            <input type="color" id="favoriteColor" name="favoriteColor">
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+
+
+
+    <footer>
+        <p style="text-align: center;">&copy; 2025 Rocket League Fans</p>
+
+    </footer>
+
+    <!-- Script para el funcionamiento del modal -->
+    <script>
+        function openModal() {
+            document.getElementById("contactModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("contactModal").style.display = "none";
+        }
+
+        // Cerrar el modal si se hace clic fuera de él
+        window.onclick = function(event) {
+            let modal = document.getElementById("contactModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

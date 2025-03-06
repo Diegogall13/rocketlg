@@ -1,0 +1,315 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Fondo y texto */
+body {
+    background-image: url('imgfon.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 80px; /* Evita que el contenido quede detrás del menú fijo */
+}
+
+/* Navbar */
+.navbar {
+    background: black;
+    border-bottom: 3px solid #1417cc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5vw;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 0px 15px #00d9ff;
+}
+
+/* Contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Imagen del logo */
+.logo-container img {
+    width: clamp(40px, 6vw, 60px);
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ff0099, 0px 0px 20px #00eaff;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.logo-container img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px #ff0099, 0px 0px 25px #00eaff;
+}
+
+/* Fuente personalizada para el logo */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@900&display=swap');
+
+.logo-text {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 900;
+    font-size: clamp(24px, 4vw, 34px);
+    color: #ffffff;
+    text-shadow: 0px 0px 12px #ff0099, 0px 0px 18px #00eaff;
+    text-transform: uppercase;
+}
+
+/* Menú de navegación */
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #00eaff;
+    font-size: clamp(14px, 2vw, 18px);
+    padding: 10px 15px;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    text-shadow: 0px 0px 5px #00eaff;
+}
+
+/* Efecto de brillo */
+.nav-links a:hover {
+    color: #ff0099;
+    text-shadow: 0px 0px 15px #ff0099;
+    transform: scale(1.2);
+}
+
+/* Línea animada debajo del enlace */
+.nav-links a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #ff0099;
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Contenido principal */
+main {
+    max-width: 900px;
+    margin: 50px auto 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+}
+
+/* Video responsivo */
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.video-container video {
+    width: 50%;
+    max-width: 250px; /* Hace el video más grande */
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7);
+}
+
+/* Botón Ver Más */
+.toggle-button {
+    background: linear-gradient(45deg, #00eaff, #0077ff);
+    color: rgb(15, 37, 39);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.5);
+}
+
+.toggle-button:hover {
+    background: linear-gradient(45deg, #886b7c, #ff0055);
+    box-shadow: 0px 6px 15px rgba(255, 0, 153, 0.6);
+    transform: scale(1.05);
+}
+
+/* Información oculta con animación */
+.hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+    height: auto;
+    padding: 10px;
+}
+
+/* Pie de página */
+footer {
+    margin-top: 100px;
+    padding: 15px;
+    background: rgba(0, 0, 0);
+    color: white;
+    text-align: center; /* Centra el texto horizontalmente */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 60px; /* Ajusta la altura según sea necesario */
+    border-top: 3px solid #00eaff;
+}
+
+/* Texto alineado */
+p {
+    text-align: justify;
+    font-size: clamp(16px, 2vw, 18px);
+    line-height: 1.6;
+    color: #dcdcdc;
+    max-width: 90%;
+    margin: 0 auto 20px;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2);
+}
+
+/* MODAL - Ventana emergente */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor del contenido del modal */
+.modal-content {
+    background: rgba(20, 20, 20, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    color: white;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Botón de cierre */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ff0099;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #00eaff;
+}
+
+/* Estilos del formulario */
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#contactForm label {
+    text-align: left;
+    font-weight: bold;
+    color: #00eaff;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+#contactForm textarea {
+    resize: none;
+}
+
+#contactForm button {
+    background: #00eaff;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#contactForm button:hover {
+    background: #ff0099;
+    color: white;
+}
+
+/* Botón flotante de contacto */
+.contact-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00eaff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 15px #00eaff;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-button a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-button:hover {
+    transform: scale(1.1);
+}

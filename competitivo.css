@@ -1,0 +1,448 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Fondo y estructura */
+body {
+    background-image: url('imgfon2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.navbar {
+    background: black;
+    border-bottom: 3px solid #1417cc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5vw; /* Se adapta al tamaño de la pantalla */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 0px 15px #00d9ff;
+}
+
+/* Contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Imagen del logo */
+.logo-container img {
+    width: clamp(40px, 6vw, 60px); /* Escalado entre 40px y 60px */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ff0099, 0px 0px 20px #00eaff;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.logo-container img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px #ff0099, 0px 0px 25px #00eaff;
+}
+
+/* Fuente personalizada para el logo */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@900&display=swap');
+
+.logo-text {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 900;
+    font-size: clamp(24px, 4vw, 34px);
+    color: #ffffff;
+    text-shadow: 0px 0px 12px #ff0099, 0px 0px 18px #00eaff;
+    text-transform: uppercase;
+}
+
+/* Menú de navegación */
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Permite que se acomoden en pantallas pequeñas */
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #00eaff;
+    font-size: clamp(14px, 2vw, 18px); /* Se adapta entre 14px y 18px */
+    padding: 10px 15px;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    text-shadow: 0px 0px 5px #00eaff;
+}
+
+/* Efecto de brillo */
+.nav-links a:hover {
+    color: #ff0099;
+    text-shadow: 0px 0px 15px #ff0099;
+    transform: scale(1.1);
+}
+
+/* Línea animada debajo del enlace */
+.nav-links a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #ff0099;
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Contenedor Principal */
+main {
+    margin-top: 80px;
+    padding: 20px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contenedor de información y video */
+/* Video responsivo */
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.video-container video {
+    width: 100%;
+    max-width: 320px; /* Hace el video más grande */
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7);
+}
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.img_rang {
+    display: flex; /* Centra la imagen */
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; /* Espaciado alrededor */
+    max-width: 80%; /* Controla el tamaño */
+}
+
+.img_rang img {
+    width: 100%; /* Ajusta la imagen al contenedor */
+    max-width: 600px; /* Máximo tamaño */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5); /* Sombra luminosa */
+    transition: transform 0.3s ease-in-out;
+}
+
+.img_rang img:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+/* Información a la Izquierda */
+.info-section {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+}
+
+/* Video a la Derecha */
+.video-section {
+    flex: 1;
+    text-align: center;
+}
+
+.video-section iframe {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-section iframe {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .video-section iframe {
+        height: 200px;
+    }
+}
+
+/* Pie de página */
+footer {
+    margin-top: 100px;
+    padding: 15px;
+    background: rgba(0, 0, 0);
+    color: white;
+    text-align: center; /* Centra el texto horizontalmente */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 60px; /* Ajusta la altura según sea necesario */
+    border-top: 3px solid #00eaff;
+}
+
+main {
+    margin-top: 80px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    text-align: justify;
+    font-size: clamp(16px, 2vw, 18px);
+    line-height: 1.6;
+    color: #dcdcdc;
+    max-width: 90%;
+    margin: 0 auto 20px;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2);
+}
+
+h1, h2 {
+    font-size: clamp(24px, 5vw, 32px);
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 0px 0px 12px #ff0099, 0px 0px 18px #00eaff;
+}
+
+/* Estilos para la tabla de rangos */
+.rank-table {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Estilos para encabezados de tabla */
+.rank-table th {
+    background: #00eaff;
+    color: black;
+    padding: 12px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Estilos para las celdas */
+.rank-table td {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Alternar color de fondo para filas */
+.rank-table tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Imágenes dentro de la tabla */
+.rank-table img {
+    width: 40px;  /* Ajusta el tamaño de las imágenes */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Resaltar filas al pasar el mouse */
+.rank-table tr:hover {
+    background: rgba(0, 255, 255, 0.3);
+    transition: 0.3s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .rank-table {
+        font-size: 14px;
+    }
+
+    .rank-table th, 
+    .rank-table td {
+        padding: 8px;
+    }
+
+    .rank-table img {
+        width: 30px;  /* Ajuste para pantallas más pequeñas */
+    }
+}
+/* MODAL - Ventana emergente */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor del contenido del modal */
+.modal-content {
+    background: rgba(20, 20, 20, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    color: white;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Botón de cierre */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ff0099;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #00eaff;
+}
+
+/* Estilos del formulario */
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#contactForm label {
+    text-align: left;
+    font-weight: bold;
+    color: #00eaff;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+#contactForm textarea {
+    resize: none;
+}
+
+#contactForm button {
+    background: #00eaff;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#contactForm button:hover {
+    background: #ff0099;
+    color: white;
+}
+
+/* Botón flotante de contacto */
+.contact-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00eaff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 15px #00eaff;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-button a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-button:hover {
+    transform: scale(1.1);
+}
+
+ol {
+    text-align: justify;
+    list-style-type: decimal; /* Números normales */
+    padding-left: 20px;
+    font-size: 18px;
+    color: white;
+}
+
+ol li {
+    margin-bottom: 8px; /* Espaciado entre los elementos */
+}
+
+ul{
+   text-align: justify;
+    padding-left: 20px;
+    font-size: 18px;
+    color: white; 
+}

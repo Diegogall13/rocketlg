@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Estadios - Rocket League</title>
+    <link rel="stylesheet" href="galeria.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="img1.jpg" alt="Rocket League Logo">
+            <h1 class="logo-text">Rocket League</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="rocket.html">Inicio</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="jugabilidad.html">Jugabilidad</a></li>
+                <li><a href="competitivo.html">Competitivo</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <h1>Mapa Interactivo de Estadios - Rocket League<br>Presiona en cualquier estadio para obtener mas información</h1>
+
+        <!-- Contenedor del mapa -->
+        <div class="map-container">
+            <img src="mapes.webp" usemap="#image-map" alt="Mapa de Rocket League">
+            <map name="image-map">
+                <area target="" alt="Champions Field" title="Champions Field" href="chfi.html" 
+                    coords="281,916,335,872,335,637,283,594,123,591,69,635,69,869,124,916" shape="poly">
+                
+                <area target="" alt="Champions Stadium" title="Champions Stadium" href="https://rocketleague-fandom-com.translate.goog/wiki/Arena?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc" 
+                    coords="446,918,603,918,650,875,650,599,598,553,444,552,385,598,388,877" shape="poly">
+                
+                <area target="" alt="DFH Stadium" title="DFH Stadium" href="https://rocketleague-fandom-com.translate.goog/wiki/Arena?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tcl" 
+                    coords="744,927,936,927,967,902,967,597,929,575,749,573,717,598,716,907" shape="poly">
+            </map>
+        </div>
+
+        <!-- Contenedor de audio y mapa de Google -->
+        <div class="media-container">
+            <h2>Audio del Juego</h2><br>
+            <audio controls>
+                <source src="audiorlcs.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+
+            <h2>Ubicación de Psyonix</h2><br>
+            <iframe 
+                width="600" 
+                height="450" 
+                style="border:0" 
+                loading="lazy" 
+                allowfullscreen 
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.469385978917!2d-117.16108408481958!3d32.707312380985796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d954a1b0584c13%3A0x4cbde5f63ff3b1b!2sPsyonix!5e0!3m2!1ses-419!2sus!4v1648672837123!5m2!1ses-419!2sus">
+            </iframe>
+        </div>
+    </div>
+    <!-- Botón de contacto flotante -->
+    <div class="contact-button" onclick="openModal()">
+        <a href="#">💬 Habla con Nosotros</a>
+    </div>
+
+      <!-- Modal de contacto -->
+    <!-- Modal de contacto con 6 campos diferentes -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Contáctanos</h2>
+        <form id="contactForm">
+            <label for="name">Nombre Completo:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="age">Edad:</label>
+            <input type="number" id="age" name="age" min="1" max="100" required>
+
+            <label for="birthdate">Fecha de Nacimiento:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+
+            <label for="favoriteColor">Color Favorito:</label>
+            <input type="color" id="favoriteColor" name="favoriteColor">
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Rocket League Fans</p>
+    </footer>
+
+    <!-- Script para manejar el modal -->
+    <script>
+    function openModal() {
+        document.getElementById("contactModal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("contactModal").style.display = "none";
+    }
+
+    // Cerrar el modal si se hace clic fuera de él
+    window.onclick = function(event) {
+        let modal = document.getElementById("contactModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+</body>
+</html>

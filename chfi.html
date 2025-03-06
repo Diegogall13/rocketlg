@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champions Field - Rocket League</title>
+    <link rel="stylesheet" href="chfi.css">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="img1.jpg" alt="Rocket League Logo">
+            <h1 class="logo-text">Rocket League</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="rocket.html">Inicio</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="jugabilidad.html">Jugabilidad</a></li>
+                <li><a href="competitivo.html">Competitivo</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenedor principal -->
+    <main class="content">
+        <div class="container">
+            <h1>Champions Field - Rocket League</h1><br>
+            <img src="chafie.jpg" alt="Champions Field"><br>
+            
+            <p>
+                *Champions Field* es uno de los estadios más emblemáticos de *Rocket League*. Fue introducido en la 
+                Temporada 5 y representa la gran final de la *Rocket League Championship Series (RLCS)*. Su ambiente 
+                nocturno y sus luces brillantes crean una atmósfera electrizante, digna de los mejores jugadores del mundo.
+            </p>
+
+            <p>
+                Este estadio cuenta con una disposición estándar, sin obstáculos adicionales, lo que lo hace ideal para
+                partidos competitivos y torneos profesionales. Sus efectos visuales dinámicos y el ambiente del público
+                brindan una experiencia única en cada partido.
+            </p>
+        </div>
+    </main>
+
+        <!-- Botón de contacto flotante -->
+        <div class="contact-button" onclick="openModal()">
+            <a href="#">💬 Habla con Nosotros</a>
+        </div>
+
+        <!-- Modal de contacto -->
+        <div id="contactModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Contáctanos</h2>
+                <form id="contactForm">
+                    <label for="name">Nombre Completo:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="age">Edad:</label>
+                    <input type="number" id="age" name="age" min="1" max="100" required>
+
+                    <label for="birthdate">Fecha de Nacimiento:</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+
+                    <label for="favoriteColor">Color Favorito:</label>
+                    <input type="color" id="favoriteColor" name="favoriteColor">
+
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Rocket League Fans</p>
+    </footer>
+
+    <!-- Script para manejar el modal -->
+    <script>
+    function openModal() {
+        document.getElementById("contactModal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("contactModal").style.display = "none";
+    }
+
+    // Cerrar el modal si se hace clic fuera de él
+    window.onclick = function(event) {
+        let modal = document.getElementById("contactModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+
+</body>
+</html>

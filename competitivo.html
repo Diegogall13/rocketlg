@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket League Competitivo</title>
+    <link rel="stylesheet" href="competitivo.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="img1.jpg" alt="Rocket League Logo">
+            <h1 class="logo-text">Rocket League</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="rocket.html">Inicio</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="jugabilidad.html">Jugabilidad</a></li>
+                <li><a href="competitivo.html">Competitivo</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="content-container">
+            <!-- Información a la Izquierda -->
+            <section class="info-section">
+                <h1>Rocket League: Competitivo y Esports</h1>
+                <p>El modo competitivo de Rocket League es una de las experiencias más desafiantes y
+                 emocionantes dentro del juego, donde los jugadores buscan mejorar su nivel y escalar en el ranking global.</p> <br>   
+                <section class="info-section">
+                    <h2>📊 Rangos en Rocket League</h2>
+                    <p>Desde <strong>Bronce</strong> hasta <strong>SuperSónico Legendario</strong>, cada rango representa la habilidad 
+                    de los jugadores en partidas clasificatorias.</p>
+                
+                    <table class="rank-table">
+                        <thead>
+                            <tr>
+                                <th>Rango</th>
+                                <th>Imagen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bronce</td>
+                                <td><img src="bronce.png" alt="Rango Bronce"></td>
+                            </tr>
+                            <tr>
+                                <td>Plata</td>
+                                <td><img src="plata.png" alt="Rango Plata"></td>
+                            </tr>
+                            <tr>
+                                <td>Oro</td>
+                                <td><img src="oro.png" alt="Rango Oro"></td>
+                            </tr>
+                            <tr>
+                                <td>Platino</td>
+                                <td><img src="platino.png" alt="Rango Platino"></td>
+                            </tr>
+                            <tr>
+                                <td>Diamante</td>
+                                <td><img src="diamante.png" alt="Rango Diamante"></td>
+                            </tr>
+                            <tr>
+                                <td>Campeón</td>
+                                <td><img src="campeon.png" alt="Rango Campeón"></td>
+                            </tr>
+                            <tr>
+                                <td>Gran Campeón</td>
+                                <td><img src="gc.jpeg" alt="Rango Gran Campeón"></td>
+                            </tr>
+                            <tr>
+                                <td>SuperSónico Legendario</td>
+                                <td><img src="ssl.png" alt="Rango SuperSónico Legendario"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                     <h2>🏆 Torneos y Esports</h2>
+                <p>Rocket League cuenta con torneos oficiales como el <strong>Rocket League Championship Series (RLCS)</strong>, donde 
+                los mejores equipos del mundo compiten por premios millonarios.</p>
+                <p>Existen también torneos de comunidad y ligas menores donde jugadores pueden demostrar su talento y avanzar al 
+                competitivo profesional.</p>
+                <h2>🏆 Mejores Equipos de Rocket League</h2>
+                <ol>
+                    <li>Team Vitality</li>
+                    <li>G2 Esports</li>
+                    <li>Moist Esports</li>
+                    <li>Gen.G</li>
+                    <li>FaZe Clan</li>
+                </ol>
+                <h2>🎮 Modos de Juego en Rocket League</h2>
+<ul>
+    <li>Casual</li>
+    <li>Competitivo</li>
+    <li>Rumble</li>
+    <li>Hoops</li>
+    <li>Snow Day</li>
+    <li>Dropshot</li>
+</ul>
+
+                
+                </section>
+
+            </section>
+
+            <!-- Video a la Derecha -->
+            <div class="video-container">
+                <video width="450px" controls>
+                    <source src="video2.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+        </div>
+    </main>
+    <!-- Botón de contacto flotante -->
+    <div class="contact-button" onclick="openModal()">
+        <a href="#">💬 Habla con Nosotros</a>
+    </div>
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Contáctanos</h2>
+            <form id="contactForm">
+                <label for="name">Nombre Completo:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="age">Edad:</label>
+                <input type="number" id="age" name="age" min="1" max="100" required>
+    
+                <label for="birthdate">Fecha de Nacimiento:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+    
+                <label for="favoriteColor">Color Favorito:</label>
+                <input type="color" id="favoriteColor" name="favoriteColor">
+    
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+    
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+    
+        <!-- Pie de página -->
+        <footer>
+            <p>&copy; 2025 Rocket League Fans</p>
+        </footer>
+    
+        <!-- Script para manejar el modal -->
+        <script>
+        function openModal() {
+            document.getElementById("contactModal").style.display = "flex";
+        }
+    
+        function closeModal() {
+            document.getElementById("contactModal").style.display = "none";
+        }
+    
+        // Cerrar el modal si se hace clic fuera de él
+        window.onclick = function(event) {
+            let modal = document.getElementById("contactModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
+</body>
+</html>
